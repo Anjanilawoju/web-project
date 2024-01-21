@@ -1,0 +1,117 @@
+/* add.css */
+
+body {
+   font-family: 'Arial', sans-serif;
+   background-color: #f8f8f8;
+   margin: 0;
+   padding: 0;
+   width: 100vw;
+   height: 100vh;
+   background-image: url('https://cdn.pixabay.com/photo/2023/07/27/07/42/cherry-cake-8152717_1280.jpg');
+   overflow-x: hidden;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size:cover;
+   backdrop-filter: blur(10px);
+   
+}
+
+h1, h2 {
+   text-align: center;
+   color: #f4542c;
+   margin-top: 0px;
+}
+a {
+   display: block;
+   text-align: center;
+   margin: 10px 0;
+   text-decoration: none;
+   color: #f1eeec;
+   font-size: 15px;
+   
+
+}
+
+a.button {
+   display: inline-block;
+   padding: 10px 20px;
+   text-decoration: none;
+   background-color: #d56a1e; /* Green color, you can change this */
+   color: #fff;
+   border: 1px solid #af814c;
+   border-radius: 5px;
+   transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+   background-color: #eea252; /* Darker green color on hover, you can change this */
+}
+#recipeForm {
+   max-width: 600px;
+   margin: 20px auto;
+   padding: 20px;
+   background-color: #fff;
+   backdrop-filter: blur(8px);
+   border-radius: 8px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+   display: block;
+   margin-bottom: 8px;
+   color: #333;
+}
+
+form input[type="text"],
+form textarea {
+   width: 100%;
+   padding: 8px;
+   margin-bottom: 16px;
+   box-sizing: border-box;
+}
+
+form input[type="submit"] {
+   background-color: #f56c1d;
+   color: #fff;
+   padding: 10px 15px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+   background-color: #f48f23;
+}
+
+table {
+   width: 100%;
+   border-collapse: collapse;
+   margin-top: 20px;
+}
+
+table, th, td {
+   border: 1px solid #ddd;
+}
+
+th, td {
+   padding: 12px;  /* Adjusted padding for better visibility */
+   text-align: left;
+}
+
+th {
+   background-color: #f47247;
+   color: white;
+}
+
+td button {
+   background-color: #e86b2d;
+   color: white;
+   border: none;
+   padding: 8px 12px;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+td button:hover {
+   background-color: #d32f2f;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App</title>
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://cdn.pixabay.com/photo/2023/07/27/07/42/cherry-cake-8152717_1280.jpg');
+            overflow-x: hidden;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #f2782d;
+            margin-top: 0px;
+        }
+        h2{
+            text-align: center;
+            color: #f14704;
+            margin-top: 20px; 
+        }
+        #recipeList {
+            max-width: 600px;
+            margin: 20px auto;
+            background: transparent;
+            backdrop-filter: blur(8px);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        div {
+            border-bottom: 1px solid #ddd;
+            padding: 0px;
+            margin-bottom: 0px;
+        }
+
+        h3 {
+            color: #7f404b;
+            margin-bottom: 5px;
+        }
+
+        p {
+            color: #666;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delicious Recipes</h1>
+    
+    <div id="recipeList"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fetch recipes when the page loads
+            fetchRecipes();
+        });
+
+        async function fetchRecipes() {
+            try {
+                const response = await fetch('http://localhost:3000/getRecipes');
+                const recipes = await response.json();
+
+                // Display recipes on the UI
+                displayRecipes(recipes);
+            } catch (error) {
+                console.error('Error fetching recipes:', error);
+            }
+        }
+
+        function displayRecipes(recipes) {
+            const recipeListElement = document.getElementById('recipeList');
+
+            // Assuming each recipe has a 'recipe_title' property
+            const recipeItems = recipes.map(recipe => `<div>
+                <h2>Recipe Title</h2>
+                <h3>${recipe.recipe_title}</h3>
+                <h2>Recipe Ingredient</h2>
+                 <h3>${recipe.ingredient}</h3>
+                <h2>Recipe Instructions</h2>
+                <h3>${recipe.instructions}</h3>
+
+            </div>`);
+
+            // Update the UI with the list of recipes
+            recipeListElement.innerHTML = recipeItems.join('');
+        }
+    </script>
+</body>
+</html>

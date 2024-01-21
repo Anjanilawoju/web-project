@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f2f2f2;
+    background-image: url('https://cdn.pixabay.com/photo/2023/07/27/07/42/cherry-cake-8152717_1280.jpg');
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+   
+
+}
+.navbar ul li {
+    margin: 0 10px;
+  
+}
+
+.navbar a {
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: #F58A07;
+}
+.navbar a.active,
+.navbar a:hover {
+    color: #f9ab55;
+    border-radius: 1rem;
+    transition: all.3s ease-in-out;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #116dca;
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+/* Add a hover effect for the navigation links */
+.navbar a:hover {
+    border-bottom: 2px solid #00cccc;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <style>
+    /* Reset some default styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f2f2f2;
+        margin: 0;
+        background-image: url('https://cdn.pixabay.com/photo/2023/07/27/07/42/cherry-cake-8152717_1280.jpg');
+        background-size: cover;
+    }
+
+    .signup-container {
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        max-width: 90%;
+        text-align: center;
+    }
+
+    .signup-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .signup-form h2 {
+        margin-bottom: 30px;
+        color: #333;
+    }
+
+    .input-group {
+        margin-bottom: 25px;
+        text-align: left;
+    }
+
+    .input-group label {
+        display: block;
+        margin-bottom: 8px;
+        color: #333;
+    }
+
+    .input-group input,
+    .input-group textarea {
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button {
+        padding: 12px 24px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #text {
+        color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <form class="signup-form" id="loginForm" action="#" method="post" enctype="multipart/form-data">
+      <h2 style="color:white">Sign In</h2>
+
+      <div class="input-group">
+        <label for="email" id="text">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="input-group">
+        <label for="password" id="text">Password</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <button type="button" onclick="attemptLogin()">Sign In</button>
+    </form>
+    <div style="display: flex; gap:10px; justify-content: center;">
+        <p style="color: white; margin-top:10px;">Don't have an account? </p>
+        <a href='signup.html' style="color: white; margin-top:10px; text-decoration: underline;">Sign Up</a>
+    </div>
+  </div>
+  <script>
+    function attemptLogin() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+
+      // Your authentication logic here (check credentials, possibly using AJAX)
+
+      // For demonstration purposes, assume authentication is unsuccessful
+      var authenticationSuccessful = true;
+
+      if (authenticationSuccessful) {
+          // Redirect to home page or dashboard
+          window.location.href = 'home.html';
+      } else {
+          // Display error message
+          document.getElementById('loginError').style.display = 'block';
+      }
+  }
+  </script>
+</body>
+</html>
